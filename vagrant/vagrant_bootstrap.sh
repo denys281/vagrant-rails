@@ -37,7 +37,7 @@ sudo apt-get install wget ca-certificates
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get -y update
 
-sudo apt-get install -y postgresql-9.4 postgresql-server-dev-9.4 postgresql-contrib-9.4
+sudo apt-get install -y postgresql-9.5 postgresql-server-dev-9.5 postgresql-contrib-9.5
 sudo sudo -u postgres psql -1 -c "CREATE USER vagrant WITH PASSWORD 'vagrant';"
 sudo sudo -u postgres psql -1 -c "ALTER USER vagrant WITH SUPERUSER;"
 
@@ -47,12 +47,12 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
-# Install ruby 2.1.4 and bundler
+# Install ruby 2.3.1 and bundler
 export RBENV_ROOT="${HOME}/.rbenv"
 export PATH="${RBENV_ROOT}/bin:${PATH}"
 export PATH="${RBENV_ROOT}/shims:${PATH}"
-rbenv install 2.1.4
-rbenv global 2.1.4
+rbenv install 2.3.1
+rbenv global 2.3.1
 gem install bundler
 rbenv rehash
 
